@@ -6,6 +6,38 @@
 // Opdracht 1
 // wave("hello") // geeft ["Hello", "hEllo", "heLlo", "helLo", "hellO"]
 
+//declareren van de string
+
+// loop maken waarbij de uitkomst hoofdletters maakt
+
+const lower = 'hello';
+const wave = []; //vast een array klaar zetten
+function waver (string) {
+    for (i = 0; i < string.length; i++) {
+        //upper = tekst aan de voorkant van 0 tot aan positie hoofdletter
+        //hoofdletter op de i'de positie
+        //originele kleine letters na de i'de positie
+        upper = string.substring(0, i).toLowerCase() + string.charAt(i).toUpperCase() + string.substring(i + 1).toLowerCase();
+        //console.log (upper);
+        wave.push(upper); //aangepaste strings toevoegen aan array
+    }
+    return wave;
+}
+console.log("Opdracht 1:");
+waver("gaetan");
+console.log(...wave);
+console.log("\n");
+wave.length = 0; //array leegmaken voor nieuwe input
+console.log("Opdracht 2:")
+waver("mSnTaaL");
+console.log(...wave);
+console.log("\n");
+wave.length = 0; //array leegmaken voor nieuwe input
+console.log("Opdracht 3:")
+waver("hi-ya"); //ik heb niks hoeven aanpassen om het - teken overgeslagen te krijgen...
+console.log(...wave);
+
+
 
 // Opdracht 2
 // Pas de functie zo aan, dat alle letters behalve de 'wave'-letter, klein zijn

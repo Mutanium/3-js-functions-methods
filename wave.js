@@ -11,13 +11,20 @@
 // loop maken waarbij de uitkomst hoofdletters maakt
 
 
-const wave = []; //vast een array klaar zetten "scope"
+// //vast een array klaar zetten "scope"
+const wave = [];
 function waver (string) {
     wave.length = 0;
     for (i = 0; i < string.length; i++) {
+
+        if (string.charAt(i) == "-") { //deze if is om over de - heen te springen zoals bij hi-ya
+           i++;
+        }
+
         //capStrng = tekst aan de voorkant van 0 tot aan positie hoofdletter
         //dan hoofdletter op de i'de positie
-        //dan originele kleine letters na de i'de positie
+        //dan kleine letters na de i'de positie
+
         capStrng = string.substring(0, i).toLowerCase() + string.charAt(i).toUpperCase() + string.substring(i + 1).toLowerCase();
         //console.log (upper);
         wave.push(capStrng); //aangepaste strings toevoegen aan array
@@ -33,7 +40,7 @@ waver("mSnTaaL");
 console.log("mSnTaaL wordt: "+ wave);
 
 console.log("Opdracht 3:")
-waver("hi-ya"); //ik heb niks hoeven aanpassen om het - teken overgeslagen te krijgen...
+waver("hi-ya"); //zie de if statement in de functie
 console.log("hi-ya wordt: "+ wave);
 
 
